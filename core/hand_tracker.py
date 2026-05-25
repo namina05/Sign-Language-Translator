@@ -39,9 +39,6 @@ class HandTracker:
 
                 for id, lm in enumerate(hdlms.landmark):
 
-                    cx = int(lm.x * w)
-                    cy = int(lm.y * h)
-
-                    hand_landmarks.append((id, cx, cy))
+                    hand_landmarks.append((id, lm.x, lm.y,lm.z))
 
         return frame, hand_landmarks

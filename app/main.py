@@ -4,10 +4,14 @@ from core.camera import Camera
 from core.hand_tracker import HandTracker
 from core.gesture_recognizer import GuestureRecognizer
 from ui.overlay import Overlay
+from services.dataset_collector import DatasetCollector
 
 camera = Camera()
 
 tracker = HandTracker()
+
+collector = DatasetCollector()
+
 
 recognizer = GuestureRecognizer()
 
@@ -28,7 +32,15 @@ while True:
 
     cv2.imshow("Sign Language Translator", frame)
 
-    if cv2.waitKey(1) == ord('q'):
+    key = cv2.waitKey(1) & 0xFF
+    if ord('a')<=key<=ord('z'):
+        label = chr(key).upper()
+        collector.save_landmarks(landmarks,label)
+        print(f"saved {label}")
+
+
+
+    if key == ord('Q'):
         break
 
 camera.release()
