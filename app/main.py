@@ -5,8 +5,11 @@ from core.hand_tracker import HandTracker
 from core.gesture_recognizer import GuestureRecognizer
 from ui.overlay import Overlay
 from services.dataset_collector import DatasetCollector
+from core.gesture_smoother import GestureSmoother
 
 camera = Camera()
+
+smoothener = GestureSmoother()
 
 tracker = HandTracker()
 
@@ -27,6 +30,7 @@ while True:
     frame, landmarks = tracker.detect_hands(frame)
 
     gesture = recognizer.recognizer(landmarks)
+    gesture = smoothener.smooth(gesture)
 
     frame = overlay.draw_text(frame, gesture)
 

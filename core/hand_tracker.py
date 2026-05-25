@@ -27,18 +27,18 @@ class HandTracker:
 
         if results.multi_hand_landmarks:
 
-            for hdlms in results.multi_hand_landmarks:
+            hdlms = results.multi_hand_landmarks[0]
 
-                self.mp_draw.draw_landmarks(
+            self.mp_draw.draw_landmarks(
                     frame,
                     hdlms,
                     self.mp_hands.HAND_CONNECTIONS
                 )
 
-                h, w, c = frame.shape
+            h, w, c = frame.shape
 
-                for id, lm in enumerate(hdlms.landmark):
+            for id, lm in enumerate(hdlms.landmark):
 
-                    hand_landmarks.append((id, lm.x, lm.y,lm.z))
+                hand_landmarks.append((id, lm.x, lm.y,lm.z))
 
         return frame, hand_landmarks
