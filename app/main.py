@@ -7,7 +7,10 @@ from services.dataset_collector import DatasetCollector
 from core.gesture_smoother import GestureSmoother
 from app.predictions import latest_prediction
 
+
 def start_recognition():
+
+    shared_frame.running = True
     camera = Camera()
 
     smoothener = GestureSmoother()
@@ -20,7 +23,7 @@ def start_recognition():
     recognizer = GuestureRecognizer()
 
 
-    while True:
+    while shared_frame.running:
 
         frame = camera.getFrame()
 
@@ -59,5 +62,6 @@ def start_recognition():
         #     break
 
     camera.release()
+    shared_frame.latest_frame = None
 
     cv2.destroyAllWindows()

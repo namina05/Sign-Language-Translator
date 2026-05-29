@@ -9,6 +9,7 @@ import app.sharedframe as shared_frame
 from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
+recognition_started = False
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,12 +19,33 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-thread = Thread(
-    target=start_recognition,
-    daemon=True
-)
+@app.post("/start")
+def start():
 
-thread.start()
+    global recognition_started
+
+    if not recognition_started:
+
+        thread = Thread(
+            target=start_recognition,
+            daemon=True
+        )
+
+        thread.start()
+        recognition_started = True
+
+    return {"status": "started"}
+
+@app.post("/stop")
+def stop():
+
+    global recognition_started
+
+    shared_frame.running = False
+    recognition_started = False
+
+    return {"status": "stopped"}
+    
 @app.get("/predictions")
 def prediction():
     return latest_prediction

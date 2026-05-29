@@ -3,6 +3,7 @@ import Handdetected  from "./handDetected";
 import Predictioncard from "./prediction";
 import Sentencebuffer from "./sentencebuffer";
 import { useEffect,useState } from "react";
+import { Link } from "react-router-dom";
 
 
 function Sidebar(){
@@ -32,6 +33,9 @@ function Sidebar(){
     return(
 
         <div className = "sidebar">
+                        <Link to="/" className="back-link">
+                ← Home
+            </Link>
             <h1>SIGN VISION AI</h1>
             <Predictioncard prediction = {prediction}/>
             <Sentencebuffer sentence = "HI"></Sentencebuffer>

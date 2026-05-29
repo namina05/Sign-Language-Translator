@@ -16,4 +16,5 @@ class Camera :
         frame = cv2.flip(frame,1)
         
         return frame
-    
+    def release(self):
+        self.cap.release()

@@ -1,17 +1,22 @@
-import { useState } from 'react'
-import Sidebar from './components/sidebar'
-import Videofeed from './components/videoFeed'
-import './App.css'
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Homepage from "./pages/home";
+import Translator from "./pages/translator";
+import "./App.css";
 function App() {
-
-
   return (
-    <div className='app'>
-      <Sidebar></Sidebar>
-      <Videofeed/>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route 
+        path="/"
+        element={<Homepage />}/>
+        <Route
+          path = "/translator"
+          element={<Translator />}
+        />
+      </Routes>
+    
+    </BrowserRouter>
+  );
 }
 
 export default App
