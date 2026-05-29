@@ -1,97 +1,259 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sign Language Translator</title>
-</head>
-<body>
+<h1 align="center">🤟 Sign Vision AI</h1>
 
-  <h1>🤟 Sign Language Translator</h1>
+<p align="center">
+  Real-Time Sign Language Translation using Computer Vision and Machine Learning
+</p>
 
-  <p>
-    A real-time Sign Language Translator built using Python, OpenCV, and Machine Learning.
-    This project detects hand gestures through a webcam feed and translates them into readable text,
-    helping create more accessible and interactive communication systems.
-  </p>
+<p align="center">
+  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?logo=react">
+  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi">
+  <img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8?logo=opencv">
+  <img src="https://img.shields.io/badge/MediaPipe-Hand%20Tracking-FF6F00">
+  <img src="https://img.shields.io/badge/Scikit--Learn-ML-F7931E?logo=scikitlearn">
+</p>
 
-  <hr>
+---
 
-  <h2>🚀 Features</h2>
-  <ul>
-    <li>Real-time hand gesture detection</li>
-    <li>Webcam-based input</li>
-    <li>Hand landmark tracking</li>
-    <li>Machine Learning gesture classification</li>
-    <li>Live prediction display</li>
-    <li>Easy to extend with new signs</li>
-  </ul>
+## 📖 Overview
 
-  <hr>
+Sign Vision AI is a real-time sign language translation system that uses a webcam feed to recognize hand gestures and convert them into text.
 
-  <h2>🛠️ Tech Stack</h2>
-  <ul>
-    <li>Python</li>
-    <li>OpenCV</li>
-    <li>MediaPipe</li>
-    <li>NumPy</li>
-    <li>Scikit-learn / TensorFlow</li>
-  </ul>
+The application combines:
 
-  <hr>
+- 🎥 OpenCV for camera capture
+- ✋ MediaPipe for hand landmark detection
+- 🤖 Scikit-Learn for gesture classification
+- ⚡ FastAPI for backend APIs and video streaming
+- ⚛️ React for the user interface
 
-  <h2>📸 How It Works</h2>
-  <ol>
-    <li>Captures live video from webcam</li>
-    <li>Detects hand landmarks</li>
-    <li>Extracts gesture features</li>
-    <li>Sends features to ML model</li>
-    <li>Predicts corresponding sign</li>
-    <li>Displays translated output in real time</li>
-  </ol>
+---
 
+## ✨ Features
 
+<ul>
+  <li>Real-time webcam streaming</li>
+  <li>Live hand detection</li>
+  <li>Gesture recognition using Machine Learning</li>
+  <li>Prediction confidence score</li>
+  <li>Sentence buffer</li>
+  <li>Modern React dashboard</li>
+  <li>Automatic camera start/stop</li>
+</ul>
 
- <hr>
+---
 
-  <h2>🧠 Future Improvements</h2>
-  <ul>
-    <li>Full ASL alphabet support</li>
-    <li>Sentence generation</li>
-    <li>Speech output</li>
-    <li>Deep learning gesture recognition</li>
-    <li>Mobile application integration</li>
-    <li>Multi-hand detection</li>
-    <li>Custom training pipeline</li>
-  </ul>
+## 🏗️ System Architecture
 
-  <hr>
+```text
+Camera
+   ↓
+OpenCV
+   ↓
+MediaPipe Hand Tracking
+   ↓
+Feature Extraction
+   ↓
+Random Forest Classifier
+   ↓
+Prediction + Confidence
+   ↓
+FastAPI Backend
+   ↓
+React Frontend
+```
 
-  <h2>🎯 Current Status</h2>
-  <p>
-    Currently supports basic gesture recognition and is being expanded into
-    a full machine learning based sign language translation system.
-  </p>
+---
 
-  <hr>
+## 🖥️ Application Screens
 
-  <h2>🤝 Contributing</h2>
-  <p>
-    Contributions, ideas, and improvements are welcome.
-    Fork the repository and submit a pull request.
-  </p>
+### 🏠 Home Page
 
-  <hr>
+- Project overview
+- Performance statistics
+- Quick access to translator
 
-  <h2>📜 License</h2>
-  <p>MIT License</p>
+### 🤟 Translator Page
 
-  <hr>
+- Live camera feed
+- Current prediction
+- Confidence score
+- Hand status
+- Sentence buffer
 
-  <h2>⭐ Support</h2>
-  <p>
-    If you liked this project, consider giving it a star on GitHub 🌟
-  </p>
+---
 
-</body>
-</html>
+## 📊 Model Details
+
+<table>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+
+<tr>
+<td>Algorithm</td>
+<td>Random Forest Classifier</td>
+</tr>
+
+<tr>
+<td>Accuracy</td>
+<td>99.06%</td>
+</tr>
+
+<tr>
+<td>Supported Classes</td>
+<td>26 ASL Letters</td>
+</tr>
+
+<tr>
+<td>Dataset Size</td>
+<td>5000+ Samples</td>
+</tr>
+
+</table>
+
+---
+
+## 🛠️ Tech Stack
+
+<table>
+<tr>
+<th>Category</th>
+<th>Technology</th>
+</tr>
+
+<tr>
+<td>Frontend</td>
+<td>React, Vite, React Router</td>
+</tr>
+
+<tr>
+<td>Backend</td>
+<td>FastAPI</td>
+</tr>
+
+<tr>
+<td>Computer Vision</td>
+<td>OpenCV, MediaPipe</td>
+</tr>
+
+<tr>
+<td>Machine Learning</td>
+<td>Scikit-Learn</td>
+</tr>
+
+<tr>
+<td>Language</td>
+<td>Python, JavaScript</td>
+</tr>
+
+</table>
+
+---
+
+## 📂 Project Structure
+
+```text
+sign_language_translator/
+│
+├── app/
+│   ├── api.py
+│   ├── main.py
+│   ├── predictions.py
+│   └── sharedframe.py
+│
+├── core/
+│   ├── camera.py
+│   ├── hand_tracker.py
+│   ├── gesture_recognizer.py
+│   └── gesture_smoother.py
+│
+├── models/
+│   └── classifier.pkl
+│
+├── services/
+│   └── dataset_collector.py
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+└── README.md
+```
+
+---
+
+## 🚀 Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/namina05/Sign-Language-Translator.git
+cd Sign-Language-Translator
+```
+
+### Backend Setup
+
+```bash
+python -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
+```
+
+---
+
+## ▶️ Run Application
+
+### Development
+
+```bash
+python -m uvicorn app.api:app --reload
+```
+
+Frontend:
+
+```bash
+cd frontend
+npm run dev
+```
+
+### Production
+
+Build React:
+
+```bash
+cd frontend
+npm run build
+```
+
+Run FastAPI:
+
+```bash
+python -m uvicorn app.api:app
+```
+
+---
+
+## 🎯 Future Improvements
+
+- Word prediction
+- Sentence generation
+- Text-to-Speech
+- Dynamic gesture recognition
+- Model retraining interface
+- Cloud deployment
+
+---
+
+<p align="center">
+  Made with ❤️ using React, FastAPI, OpenCV and MediaPipe
+</p>
