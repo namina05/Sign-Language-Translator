@@ -9,7 +9,7 @@ class GuestureRecognizer:
 
     def recognizer(self,landmarks):
         if(len(landmarks)==0):
-            return  "NO HAND"
+            return  "NO HAND",100
         wrist_x = landmarks[0][1]
         wrist_y = landmarks[0][2]
         wrist_z = landmarks[0][3]
@@ -21,12 +21,12 @@ class GuestureRecognizer:
 
         prediction = self.model.predict([row])
 
-        # probabilty = self.model.predict_proba([row])
+        probabilty = self.model.predict_proba([row])
 
-        # confidence = max(probabilty[0])
+        confidence = max(probabilty[0])*100
         # print(f"{prediction[0]} -> {confidence}")
         # if confidence < 0.30:
         #     return "Unknown"
-        return prediction[0]
+        return prediction[0],confidence
     
 

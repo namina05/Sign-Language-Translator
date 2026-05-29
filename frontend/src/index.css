@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  background: #0b1020;
+  color: white;
+  font-family: Inter, sans-serif;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 320px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #12192e;
+}
+
+.card {
+  background: #1a233a;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.prediction {
+  font-size: 72px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.video-feed {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
